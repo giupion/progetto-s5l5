@@ -1,12 +1,6 @@
 <?php
-ob_start();
-include_once './header.php';
+require_once './header.php';
 require_once './User.php';
-require_once './Database.php';
-
-session_start();
-
-$database = Database::getInstance();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
@@ -45,7 +39,7 @@ include_once './footer.php';
         <?php if (isset($errorMessage)) : ?>
             <p class="error"><?php echo $errorMessage; ?></p>
         <?php endif; ?>
-        <form action="login.php" method="POST">
+        <form action="index.php?action=login" method="POST">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
 

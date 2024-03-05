@@ -1,12 +1,6 @@
 <?php
-ob_start();
-include_once './header.php';
+require_once './header.php';
 require_once './User.php';
-require_once './Database.php';
-
-session_start();
-
-$database = Database::getInstance();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
@@ -18,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($user->register()) {
         // Utente registrato con successo, reindirizza alla pagina di login
-        header("Location: login.php?registration_success=1");
+        header("Location: index.php?action=login&registration_success=1");
         exit();
     } else {
         $errorMessage = "Username già esistente. Scegli un altro username.";
@@ -27,7 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 include_once './footer.php';
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,12 +36,12 @@ include_once './footer.php';
         <?php if (isset($successMessage)) : ?>
             <p class="success"><?php echo $successMessage; ?></p>
         <?php endif; ?>
-        <form action="register.php" method="POST">
-           <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
+        <form action="index.php?action=register" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
             <button type="submit">Registrati</button>
         </form>
     </div>
