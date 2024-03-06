@@ -20,9 +20,17 @@ $ui = new UI($database);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['action'])) {
         if ($_POST['action'] === 'deleteRecord') {
-            
+            // Verifica se è stato inviato l'ID del record da eliminare
+            if (isset($_POST['recordId'])) {
+                $recordId = $_POST['recordId'];
+
+                // Utilizza l'oggetto UI per eliminare il record
+                $ui->deleteRecord('datiutente', $recordId);
+            } else {
+                echo "Errore: ID del record non specificato per l'eliminazione.";
+            }
         } elseif ($_POST['action'] === 'updateRecord') {
-           
+            // Verifica se sono stati inviati i dati necessari per l'aggiornamento
             if (isset($_POST['recordId'], $_POST['editColumns'])) {
                 $recordId = $_POST['recordId'];
                 $editColumns = $_POST['editColumns'];
@@ -61,6 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 }
+?>
 ?>
 <?php include('header.php'); ?>
 <!DOCTYPE html>
