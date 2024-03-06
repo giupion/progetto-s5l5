@@ -1,5 +1,5 @@
 <?php
-require_once './header.php';
+
 require_once './User.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -25,7 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-include_once './footer.php';
 ?>
 
 <!DOCTYPE html>
@@ -53,4 +52,5 @@ include_once './footer.php';
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-</html>
+
+
