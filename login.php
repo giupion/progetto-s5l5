@@ -30,13 +30,14 @@ include_once './footer.php';
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<head>  <link rel="stylesheet" href="./styles.css">
+
 
 </head>
-<body>
-    <div class="login-container">
-        <h2>Login</h2>
+<body >
+<h2 class="text-center">Login</h2>
+    <div class="login-container text-center">
+        
         <?php if (isset($errorMessage)) : ?>
             <p class="error"><?php echo $errorMessage; ?></p>
         <?php endif; ?>

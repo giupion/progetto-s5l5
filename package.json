@@ -1,0 +1,19 @@
+{
+  "name": "progetto-s5l5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "sass": "sass styles.scss styles.css"
+},
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.71.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
