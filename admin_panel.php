@@ -162,11 +162,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     echo '</td>';
                 }
                 // Aggiorna il form per includere il recordId
+                
                 echo '<td>';
                 echo '<form action="admin_panel.php" method="POST">';
+              
                 echo '<input type="hidden" name="action" value="deleteRecord">';
                 echo '<input type="hidden" name="recordId" value="' . $record['id'] . '">';
-                echo '<button type="submit" class="btn btn-danger">Elimina</button>';
+                echo '<button type="submit" class="btn btn-danger me-2">Elimina</button>';
                 echo '</form>';
                 echo '<form action="admin_panel.php" method="POST">';
                 echo '<input type="hidden" name="action" value="updateRecord">';
@@ -182,6 +184,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
                 ?>
                 <!-- Aggiungi gli input per le colonne da modificare -->
+                <div class="d-flex justify-content-between">
                 <label for="newPokemon">Nuovo Pokemon:</label>
                 <input type="text" id="newPokemon" name="newPokemon" value="<?php echo htmlspecialchars($record['pokemon']); ?>" required>
 
