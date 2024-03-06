@@ -7,8 +7,14 @@
 
 
  */
+ .table{  background-image: url('./Pokeball.jpg') !important; /* Sostituisci 'percorso/tuo-background.jpg' con il percorso corretto dell'immagine di sfondo */
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  height: 100vh !important;
+  margin: 0 !important;}
 
-nav .colorblue{background-color: #006ccf !important;}
+
 
  body {
   background-image: url('./_6644b051-fcbf-4075-b3e1-75716f4b5e89.jpg') !important; /* Sostituisci 'percorso/tuo-background.jpg' con il percorso corretto dell'immagine di sfondo */
