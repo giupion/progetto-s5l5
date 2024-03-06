@@ -71,13 +71,53 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="./styles.css">
     
     <title>PokeBanca</title>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+    <a class="navbar-brand" href="index.php">
+    <img src="logo.png" alt="Logo" width="100px" heigth="150px">
+    PokeBank!
+</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                    <a class="nav-link"  href="index.php">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?action=register">Registrazione</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?action=login">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 </head>
 <body >
 <div class="admin-panel-container">
-    <h2>Benvenuto, <?php echo isset($authenticatedUser['username']) ? htmlspecialchars($authenticatedUser['username']) : 'Utente'; ?>!</h2>
+    <h2 class="text-center">Benvenuto, <?php echo isset($authenticatedUser['username']) ? htmlspecialchars($authenticatedUser['username']) : 'Utente'; ?>!</h2>
+    <h2 class="text-center my-5">Deposita il tuo Pokemon</h2>
+    <form class="text-center my-5" action="admin_panel.php" method="POST">
+        <label for="pokemon">Pokemon:</label>
+        <input type="text" id="pokemon" name="pokemon" required>
 
+        <label for="tipo">Tipo:</label>
+        <input type="text" id="tipo" name="tipo" required>
+
+        <label for="livello">Livello:</label>
+        <input type="number" id="livello" name="livello" required>
+
+        <button type="submit">Deposita il Pokemon nel box (dati sensibili)</button>
+    </form>
+    
     <div class="container mt-5 ">
-        <h2>Il tuo BOX!</h2>
+        <h2>Il tuo Box!</h2>
         <?php
         // Esegui la query per ottenere i dati dalla tabella "datiutente"
         $query = "SELECT * FROM datiutente";
@@ -164,19 +204,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
     </div>
 
-    <h2>Deposita il tuo Pokemon</h2>
-    <form action="admin_panel.php" method="POST">
-        <label for="pokemon">Pokemon:</label>
-        <input type="text" id="pokemon" name="pokemon" required>
-
-        <label for="tipo">Tipo:</label>
-        <input type="text" id="tipo" name="tipo" required>
-
-        <label for="livello">Livello:</label>
-        <input type="number" id="livello" name="livello" required>
-
-        <button type="submit">Deposita il Pokemon nel box (dati sensibili)</button>
-    </form>
+    
 
 </div>
 
