@@ -20,9 +20,9 @@ $ui = new UI($database);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['action'])) {
         if ($_POST['action'] === 'deleteRecord') {
-            // Codice per l'eliminazione del record...
+            
         } elseif ($_POST['action'] === 'updateRecord') {
-            // Verifica se sono stati inviati i dati necessari per l'aggiornamento
+           
             if (isset($_POST['recordId'], $_POST['editColumns'])) {
                 $recordId = $_POST['recordId'];
                 $editColumns = $_POST['editColumns'];
