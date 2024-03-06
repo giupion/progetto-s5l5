@@ -3,6 +3,8 @@ require_once './Database.php';
 require_once './UI.php';
 $database = Database::getInstance();
 
+
+
 // Inizializza l'oggetto UI passando l'istanza del database
 $ui = new UI($database);
 class Database
@@ -35,6 +37,8 @@ class Database
         $stmt->execute($params);
         return $stmt;
     }
+
+    
 
     public function createUser($dbname, $tableName, $username, $hashedPassword)
     {

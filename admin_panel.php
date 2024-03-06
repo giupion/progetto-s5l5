@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit">Inserisci Dati Sensibili</button>
     </form>
 
-    <!-- Altri elementi dell'interfaccia utente possono essere aggiunti secondo necessità -->
+   
 
 </div>
 <!-- Fine del corpo della pagina -->

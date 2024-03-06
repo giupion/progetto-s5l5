@@ -1,6 +1,8 @@
 <?php
 class UI
 {
+
+    
     private $database;
 
     public function __construct(Database $database)
