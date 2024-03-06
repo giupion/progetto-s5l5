@@ -1,6 +1,6 @@
 </main>
 <footer class="my-5 text-center">
-    <p>&copy; <?php echo date("Y"); ?> PokeBank-2024</p>
+    <p>&copy; <?php echo date("Y"); ?> PokeBank-2024- tutti i diritti riservati a nintendo!</p>
     <!-- Aggiungi altri elementi del footer se necessario -->
 </footer>
 <!-- Includi gli script necessari, ad esempio jQuery, Bootstrap, ecc. -->

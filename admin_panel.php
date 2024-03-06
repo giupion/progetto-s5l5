@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 }
-?>
+
 ?>
 <?php include('header.php'); ?>
 <!DOCTYPE html>
