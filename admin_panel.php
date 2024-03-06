@@ -29,8 +29,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['action'])) {
         if ($_POST['action'] === 'deleteRecord') {
             // Verifica se sono stati inviati i dati necessari per l'eliminazione
-            if (isset($_POST['recordId']) && isset($tableName)) {
+            if (isset($_POST['recordId'])) {
                 $recordId = $_POST['recordId'];
+                
+                // Aggiungi la definizione di $tableName
+                $tableName = 'datiutente';
+                
                 // Utilizza l'oggetto UI per eliminare il record
                 $ui->deleteRecord($tableName, $recordId);
             } else {
